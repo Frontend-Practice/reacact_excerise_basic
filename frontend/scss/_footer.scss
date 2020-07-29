@@ -1,0 +1,16 @@
+.footer-section-content{
+	background-color: $color-footer;
+	color: $color-white;
+}
+
+@media (max-width: 765px){
+	.footer-section-content{
+		.footer-person-info, .footer-other-info{
+			padding-bottom: 5px;
+			text-align: center;
+		}
+		.footer-location-info{
+			text-align: center;
+		}
+	}
+}

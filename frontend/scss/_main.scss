@@ -1,0 +1,219 @@
+body {
+    display: block;
+    margin: 0px;
+    font-family: $font-body;
+    font-size: $font-size;
+    background-color: $color-background;
+}
+
+@for $i from 1 through 6{
+    #{h}#{$i}{
+    	font-family: $font-title;
+    	font-weight: 500;
+    }
+}
+
+// render col-md-x same as bootstrap
+@for $i from 1 through 12{
+    $width : ($i*100%/12) !important;
+    .#{col-md}-#{$i}{
+        width: $width;
+        min-height: 1px;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+}   
+
+// render pl-x, pr-x same as bootstrap
+@for $i from 0 through 10{
+$paddingUp : (5px*$i) !important;
+    .#{p}-#{$i}{
+    	padding:$paddingUp;
+    }
+    .#{m}-#{$i}{
+    	padding:$paddingUp;
+    }
+    .#{pt}-#{$i}{
+    	padding-top:$paddingUp;
+    }
+    .#{pb}-#{$i}{
+    	padding-bottom:$paddingUp;
+    }
+    .#{pl}-#{$i}{
+    	padding-left:$paddingUp;
+    }
+    .#{pr}-#{$i}{
+    	padding-right:$paddingUp;
+    }
+    .#{mt}-#{$i}{
+    	margin-top:$paddingUp;
+    }
+    .#{mb}-#{$i}{
+    	margin-bottom:$paddingUp;
+    }
+    .#{ml}-#{$i}{
+    	margin-left:$paddingUp;
+    }
+    .#{mr}-#{$i}{
+    	margin-right:$paddingUp;
+    }
+}
+
+%tag-a-default-scss{
+	color: inherit;
+	outline: none!important;
+    background-color: transparent;
+}
+
+a{
+	@extend %tag-a-default-scss;
+	outline: none!important;
+	&:hover{
+		@extend %tag-a-default-scss;
+	}
+}
+
+.btn{
+    display: inline-block;
+    position: relative;
+    font-size: 14px;
+    background-color: $color-background-body-top;
+    color: $color-white;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border: none;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+    text-transform: none;
+    cursor: pointer;
+    outline: 0;
+    border-radius: 5px;
+    -webkit-box-shadow: 4px 6px 5px -2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 4px 6px 5px -2px rgba(0,0,0,0.75);
+    box-shadow: 4px 6px 5px -2px rgba(0,0,0,0.75);
+}
+
+.btn:hover{
+    background-color: $color-white;
+    color: $color-background-body-top;
+    border: 1px solid $color-background-body-top;
+}
+
+.row{
+    display: flex;
+}
+
+@media (max-width: 765px){
+    .row{
+        display: block;
+    }
+    @for $i from 1 through 6{
+        $width : ($i*100%/6) !important;
+        .#{col-md}-#{$i}{
+            width: 100% !important;
+            padding-right: 0px;
+            padding-left: 0px;
+        }
+    }   
+}
+
+.container-fluid {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.container{
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+@media (min-width: 1200px){
+    .container {
+        max-width: 1140px;
+    }
+
+}
+
+@media (min-width: 992px){
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 768px){
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 576px){
+    .container {
+        max-width: 540px;
+    }
+}
+
+.text-left{
+   text-align: left; 
+}
+.text-center{
+   text-align: center; 
+}
+.text-right{
+   text-align: right; 
+}
+
+.float-left{
+	float: left;
+}
+
+.float-right{
+	float: right;
+}
+
+.w-50{ width: 50%; }
+
+.d-flex {
+	display: flex;
+}
+
+.d-none{
+    display: none;
+}
+
+.d-block{
+    display: block;
+}
+
+.align-items-center {
+	-webkit-box-align: center!important;
+	-webkit-align-items: center!important;
+	-ms-flex-align: center!important;
+	align-items: center!important;
+}
+
+.d-flex {
+	display: -webkit-box!important;
+	display: -webkit-flex!important;
+	display: -ms-flexbox!important;
+	display: flex!important;
+}
+
+.flex-center {
+	display: flex;
+	justify-content: center;
+}
+
+.mb-5px{
+	margin-bottom: 5px;
+}
+.switch-off{
+	display: none;
+}
+
+.main-border{
+    border: 1px solid $color-border;
+}
